@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #070b14;
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+}
+
+.game {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+h1 {
+    margin: 0;
+    font-size: 38px;
+    letter-spacing: 3px;
+}
+
+h2 {
+    margin: 8px 0 25px;
+    color: #8ca5ff;
+    letter-spacing: 5px;
+}
+
+.info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.info-box {
+    padding: 12px;
+
+    background: #121a29;
+
+    border: 1px solid #2c3a52;
+
+    border-radius: 12px;
+}
+
+.info-box span {
+    display: block;
+
+    color: #8c98aa;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+}
+
+.info-box strong {
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 19px;
+}
+
+.message {
+    min-height: 25px;
+
+    margin-bottom: 12px;
+
+    color: #b8c2d1;
+}
+
+.board {
+    width: min(90vw, 480px);
+
+    aspect-ratio: 1 / 1;
+
+    margin: auto;
+
+    padding: 6px;
+
+    display: grid;
+
+    gap: 5px;
+
+    background: #182233;
+
+    border: 2px solid #35445d;
+
+    border-radius: 15px;
+}
+
+.cell {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #0e151f;
+
+    border: 1px solid #29384c;
+
+    border-radius: 6px;
+
+    font-size: clamp(18px, 5vw, 30px);
+
+    user-select: none;
+}
+
+.start {
+    background: #173d31;
+}
+
+.end {
+    background: #443b18;
+}
+
+/*
+    IMPORTANT:
+    There is NO visible player.
+    There is NO visible path.
+    There are NO visited cells.
+*/
+
+.controls {
+    margin-top: 18px;
+}
+
+.controls button {
+    width: 58px;
+    height: 50px;
+
+    margin: 4px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    background: #202c40;
+
+    color: white;
+
+    font-size: 22px;
+
+    cursor: pointer;
+}
+
+.controls button:hover {
+    background: #30415f;
+}
+
+.actions {
+    margin-top: 10px;
+}
+
+.actions button {
+    padding: 12px 18px;
+
+    margin: 5px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4d6cff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+.actions button:hover {
+    transform: scale(1.03);
+}
+
+.help {
+    color: #78869a;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+}
+
+.win-screen {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.88);
+
+    padding: 20px;
+}
+
+.win-box {
+    width: min(90%, 420px);
+
+    padding: 35px;
+
+    text-align: center;
+
+    background: #111927;
+
+    border: 1px solid #3b4c69;
+
+    border-radius: 20px;
+}
+
+.trophy {
+    font-size: 65px;
+}
+
+.win-box h2 {
+    margin-bottom: 15px;
+}
+
+.win-box button {
+    padding: 13px 20px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #4d6cff;
+
+    color: white;
+
+    font-weight: bold;
+
+    cursor: pointer;
+}
+
+@media (max-width: 500px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .board {
+        gap: 3px;
+        padding: 5px;
+    }
+
+    .controls button {
+        width: 52px;
+        height: 48px;
+    }
+}

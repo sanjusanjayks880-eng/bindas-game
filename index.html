@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BINDAS GAME</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main class="game">
+
+        <h1>🎮 BINDAS GAME</h1>
+        <h2>PATH MEMORY</h2>
+
+        <div class="info">
+
+            <div>
+                <span>LEVEL</span>
+                <b id="level">1</b>
+            </div>
+
+            <div>
+                <span>TIME</span>
+                <b id="time">0.0s</b>
+            </div>
+
+            <div>
+                <span>BEST</span>
+                <b id="best">--</b>
+            </div>
+
+        </div>
+
+        <p id="message">
+            Find the hidden path!
+        </p>
+
+        <div id="board" class="board"></div>
+
+        <div class="controls">
+
+            <button onclick="movePlayer(0,-1)">▲</button>
+
+            <div>
+                <button onclick="movePlayer(-1,0)">◀</button>
+                <button onclick="movePlayer(0,1)">▼</button>
+                <button onclick="movePlayer(1,0)">▶</button>
+            </div>
+
+        </div>
+
+        <div class="actions">
+
+            <button onclick="restartLevel()">
+                🔄 RESTART
+            </button>
+
+            <button onclick="newGame()">
+                🏠 NEW GAME
+            </button>
+
+        </div>
+
+        <p class="help">
+            Find the hidden route from 🟢 to 🏁.<br>
+            Your position and previous path are invisible.
+        </p>
+
+    </main>
+
+
+    <div id="winScreen" class="win-screen">
+
+        <div class="win-box">
+
+            <div>🏆</div>
+
+            <h2>LEVEL COMPLETE!</h2>
+
+            <p id="winTime"></p>
+
+            <p id="newBest"></p>
+
+            <button onclick="nextLevel()">
+                NEXT LEVEL →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
